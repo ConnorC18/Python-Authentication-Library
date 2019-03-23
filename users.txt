@@ -1,2 +1,2 @@
-EXAMPLE|wpzDisOuwqDDgsOmw6bDrsOew6TDiGRgYnBC|EXAMPLE@EXAMPLE.com|What was your childhood nickname?|EXAMPLE
+EXAMPLE|wpzDisOuwqDDgsOmw6bDrsOew6TDiGRgYnBC|example@example.com|What was your childhood nickname?|EXAMPLE
 
