@@ -13,6 +13,7 @@ Contents
 + + <a href="https://github.com/ConnorC18/Python-Authentication-Library#reset-password">Reset Password</a>
 +  <a href="https://github.com/ConnorC18/Python-Authentication-Library#support">Support</a>
 + <a href="https://github.com/ConnorC18/Python-Authentication-Library#version">Version</a>
++ <a href="https://github.com/ConnorC18/Python-Authentication-Library#coming-soon">Coming Soon</a>
 
 
 ## Getting Started
@@ -78,6 +79,8 @@ Email Me: connor.coleman2002@gmail.com
 + Signup Function returns a true of false value if the users sign up is successful
 + Login function will return if the user logged in successfully
 + Get user details ; You will be able to find the current users username and other account info.
++ Add Log out function
++ Create a session like environment
 
 
 
