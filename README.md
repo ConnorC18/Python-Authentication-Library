@@ -7,10 +7,13 @@ Contents
 + <a href="https://github.com/ConnorC18/Python-Authentication-Library#getting-started">Getting Started</a>
 + <a href="https://github.com/ConnorC18/Python-Authentication-Library#installing">Installing</a>
 + <a href="https://github.com/ConnorC18/Python-Authentication-Library#examples">Examples</a>
++ + <a href="https://github.com/ConnorC18/Python-Authentication-Library#load-library">Load Library</a>
 + + <a href="https://github.com/ConnorC18/Python-Authentication-Library#sign-up">Sign Up</a>
 + + <a href="https://github.com/ConnorC18/Python-Authentication-Library#login">Login</a>
 + + <a href="https://github.com/ConnorC18/Python-Authentication-Library#check-if-user-is-logged-in">Check if user is logged in</a>
 + + <a href="https://github.com/ConnorC18/Python-Authentication-Library#reset-password">Reset Password</a>
++ + <a href="https://github.com/ConnorC18/Python-Authentication-Library#session-info">Session Info</a>
++ + <a href="https://github.com/ConnorC18/Python-Authentication-Library#logout">Logout</a>
 +  <a href="https://github.com/ConnorC18/Python-Authentication-Library#support">Support</a>
 + <a href="https://github.com/ConnorC18/Python-Authentication-Library#version">Version</a>
 + <a href="https://github.com/ConnorC18/Python-Authentication-Library#coming-soon">Coming Soon</a>
@@ -45,21 +48,34 @@ First of all download the latest release! You can do this by clicking the button
 </ol>
 
 #### Examples
+<a href="https://github.com/ConnorC18/Python-Authentication-Library/wiki">Wiki!</a>
+###### Load Library
+```
+from loginSystem import * # Loads the login library
+```
 ###### Sign Up
 ```
-signup() #Sends the user to the signup function, Doesn't return a value
+signup() # Will return True or the error message thrown by the function
 ```
 ###### Login
 ```
-login() #Sends the user to the login function, Doesn't return a value
+login() # Will return True or "incorrectinfo" or "noaccount" depending on the error.
 ```
 ###### Check If User Is Logged In
 ```
-checkLoggedIn() #Sends the user to the check logged in function, Returns true or false
+checkLoggedIn() # Will return True of False
 ```
 ###### Reset Password
 ```
-passwordReset() #Sends the user to the password reset function, Doesn't return a value
+passwordReset() # Will return True or "noemail" or "wrongsecurityquestionanswer"
+```
+###### Session Info
+```
+print(sessionInfo["username"]) # Will return the current logged in users, username
+```
+###### Logout
+```
+print(logout())  # Will return True or "notloggedin"
 ```
 
 
@@ -71,16 +87,12 @@ Email Me: connor.coleman2002@gmail.com
 
 #### Version
 
-<b>Current Version: 1.0.0</b>
+<b>Current Version: 1.1.0</b>
 
 
 #### Coming Soon
 
-+ Signup Function returns a true of false value if the users sign up is successful
-+ Login function will return if the user logged in successfully
-+ Get user details ; You will be able to find the current users username and other account info.
-+ Add Log out function
-+ Create a session like environment
++ Email With Password reset will have a subject line
 
 
 
