@@ -9,8 +9,8 @@ Contents
 + <a href="https://github.com/ConnorC18/Python-Authentication-Library#examples">Examples</a>
 + + <a href="https://github.com/ConnorC18/Python-Authentication-Library#sign-up">Sign Up</a>
 + + <a href="https://github.com/ConnorC18/Python-Authentication-Library#login">Login</a>
-+ + <a href="https://github.com/ConnorC18/Python-Authentication-Library#sign-up">Sign Up</a>
-+ + <a href="https://github.com/ConnorC18/Python-Authentication-Library#sign-up">Sign Up</a>
++ + <a href="https://github.com/ConnorC18/Python-Authentication-Library#check-if-user-is-logged-in">Check if user is logged in</a>
++ + <a href="https://github.com/ConnorC18/Python-Authentication-Library#password-reset">Password Reset</a>
 +  <a href="https://github.com/ConnorC18/Python-Authentication-Library#support">Support</a>
 + <a href="https://github.com/ConnorC18/Python-Authentication-Library#version">Version</a>
 
