@@ -1,5 +1,2 @@
-Connor|wpzDisOuwqDDgsOmw6bDrsOew6TDiGRgYnBC|connor.coleman2002@gmail.com|What was your childhood nickname?|ConBon
-Conor|wpzDisOuwqDDgsOmw6bDrsOew6TDiGRgYnBC|fakeEmail@gmail.com|What was your childhood nickname?|ConBon
-Co|wobDnsOcw5zDnsOkZGBicEJG|realEmail@gmail.com|What was your childhood nickname?|ConBon
-ConBon|wqDDgsOmw6bDrsOew6TDiGRgYnBCRg==|fakeEmailAcct@gmail.com|What was your childhood nickname?|ConBon
-Con|wobDnsOcwoTDnsOcZGBicEJG|Email@gmail.com|What was your childhood nickname?|connor
+EXAMPLE|wpzDisOuwqDDgsOmw6bDrsOew6TDiGRgYnBC|EXAMPLE@EXAMPLE.com|What was your childhood nickname?|EXAMPLE
+
