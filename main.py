@@ -4,7 +4,7 @@ print(signUp())                 # Will return True or the error message thrown b
 print(login())                  # Will return True or "incorrectinfo" or "noaccount" depending on the error.
 print(sessionInfo["username"])  # Will return the current logged in users, username
 print(logout())                 # Will return True or "notloggedin"
-print(passwordReset())          # Will return True or "noemail" or "wrongsecurityquestionanswer"
+print(passwordReset())          # Will return True or "noemail" or "wrongsecurityquestionanswer" 
 
 
 
