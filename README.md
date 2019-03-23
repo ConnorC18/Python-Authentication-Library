@@ -31,7 +31,7 @@ Python 3.4 Or Above
 A step by step tutorial that will tell you how to get the library running<br>
 First of all download the latest release! You can do this by clicking the button below:
 <br>
-[![Current Version](https://dabuttonfactory.com/button.png?f=Open+Sans&ts=16&tc=666&hp=24&vp=12&c=round&bgt=unicolored&bgc=eee&bs=1&bc=ccc&t=Download+Latest+Version)](https://github.com/ConnorC18/Python-Authentication-Library/releases)
+[![Current Version](https://dabuttonfactory.com/button.png?f=Open+Sans&ts=16&tc=666&hp=24&vp=12&c=round&bgt=unicolored&bgc=eee&bs=1&bc=ccc&t=Download+Latest+Version)](https://github.com/ConnorC18/Python-Authentication-Library/releases/latest)
 <br>
 <ol>
   <li>Open the .ZIP and drag the <b>loginSystem.py</b> to your project directory</li>
