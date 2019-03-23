@@ -5,7 +5,7 @@ print(login())                  # Will return True or "incorrectinfo" or "noacco
 print(sessionInfo["username"])  # Will return the current logged in users, username
 print(logout())                 # Will return True or "notloggedin"
 print(passwordReset())          # Will return True or "noemail" or "wrongsecurityquestionanswer" 
-
+print(checkLoggedIn())          # Will return True of False
 
 
 
