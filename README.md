@@ -7,7 +7,10 @@ Contents
 + <a href="https://github.com/ConnorC18/Python-Authentication-Library#getting-started">Getting Started</a>
 + <a href="https://github.com/ConnorC18/Python-Authentication-Library#installing">Installing</a>
 + <a href="https://github.com/ConnorC18/Python-Authentication-Library#examples">Examples</a>
-+ + <a href="https://github.com/ConnorC18/Python-Authentication-Library#examples">Sign Up</a>
++ + <a href="https://github.com/ConnorC18/Python-Authentication-Library#sign-up">Sign Up</a>
++ + <a href="https://github.com/ConnorC18/Python-Authentication-Library#login">Login</a>
++ + <a href="https://github.com/ConnorC18/Python-Authentication-Library#sign-up">Sign Up</a>
++ + <a href="https://github.com/ConnorC18/Python-Authentication-Library#sign-up">Sign Up</a>
 +  <a href="https://github.com/ConnorC18/Python-Authentication-Library#support">Support</a>
 + <a href="https://github.com/ConnorC18/Python-Authentication-Library#version">Version</a>
 
