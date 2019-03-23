@@ -3,8 +3,11 @@ import smtplib
 import ssl
 import random
 import fileinput
-global loggedIn
-loggedIn = False
+global session
+session = False
+global sessionInfo
+sessionInfo = {"username": ""}
+
 
 
 def encode(key, clear):
@@ -96,8 +99,11 @@ def passwordReset():
         if userList[i].email == email:
             index = i
     if index == -1:
-        print("Email doesnt exist!")
-        passwordReset()
+        return "noemail"
+    print(userList[i].question)
+    asw = input("Please enter your security question answer")
+    if asw.lower() != (userList[i].answer).lower():
+        return "wrongsecurityquestionanswer"
 
 
 
@@ -106,7 +112,7 @@ def passwordReset():
     sender_email = "emailpythonexample@gmail.com"
     receiver_email = email
     password = "SupportMailExample"
-    resetCode = random.randint(1000,9999)
+    resetCode = random.randint(100000,999999)
     message = """\
     Subject: Password Reset
 
@@ -146,79 +152,84 @@ def passwordReset():
 
 
 def signUp():
-    username = input("Please Enter a username: ")
-    userList = getUsers()
-    for user in userList:
-        if (user.username).lower() == username.lower():
-            print("Error Username Taken!")
-            signUp()
-    password = input("Please Enter a password: ")
-    passwordCheck = checkPassword(password)
-    if passwordCheck[0]:
-        print("Valid")
-    else:
-        print("Invalid Password\n")
-        print("Errors:")
-        for error in passwordCheck[1]:
-            print(error)
-        print("\n")
-        signUp()
-    email = ""
-    checkMail = False
-    temp = False
-    email = input("Please enter your email")
-    while checkMail == False:
-        temp = False
+    try:
+        username = input("Please Enter a username: ")
+        userList = getUsers()
         for user in userList:
-            if (user.email).lower() == email.lower():
-                temp = True
-        if temp == True or "@" not in email:
-            if temp == True:
-                print("in use")
-            elif "@" not in email:
-                print("@ not in")
-            else:
-                print("WTF")
-            print("Invalid email or email is already in use")
-            email = input("Please enter your email")
+            if (user.username).lower() == username.lower():
+                print("Error Username Taken!")
+                signUp()
+        password = input("Please Enter a password: ")
+        passwordCheck = checkPassword(password)
+        if passwordCheck[0]:
+            print("Valid Password\n")
         else:
-            checkMail = True
+            print("Invalid Password\n")
+            print("Errors:")
+            for error in passwordCheck[1]:
+                print(error)
+            print("\n")
+            signUp()
+        email = ""
+        checkMail = False
+        temp = False
+        email = input("Please enter your email")
+        while checkMail == False:
+            temp = False
+            for user in userList:
+                if (user.email).lower() == email.lower():
+                    temp = True
+            if temp == True or "@" not in email:
+                if temp == True:
+                    print("This Email is Currently In Use")
+                elif "@" not in email:
+                    print("Invalid Email Address")
+                else:
+                    print("Error #SignUpPasswordCheck Please report this on the github page!")
+                    exit("Error #SignUpPasswordCheck Please report this on the github page!")
+                print("Invalid email or email is already in use")
+                email = input("Please enter your email")
+            else:
+                checkMail = True
 
-    question = 0
-    while not (int(question) >= 1 and int(question) <= 16):
-        question = input("""Please Select a Security question
-        1: What was your childhood nickname? 
-        2: In what city did you meet your spouse/significant other?
-        3: What is the name of your favorite childhood friend? 
-        4: What street did you live on in primary school?
-        5: What is your oldest sibling’s birthday month and year? (e.g., January 1900) 
-        6: What is the middle name of your youngest child/sibling?
-        7: What is your oldest sibling's middle name?
-        8: What was the name of your first stuffed animal?
-        9: In what city or town did your mother and father meet? 
-        10: Where were you when you had your first kiss? 
-        11: What is the first name of the boy or girl that you first kissed?
-        12: In what city does your nearest sibling live? 
-        13: What is your youngest brother’s birthday month and year? (e.g., January 1900) 
-        14: In what city or town was your first job?
-        15: What is the name of the place your wedding reception was held?
-        16: What is the name of a college you applied to but didn't attend?
-        """)
-        try:
-            if not (int(question) >= 1 and int(question) <= 16):
-                print("Invalid number")
-        except ValueError:
-            question = 0
-            print("Invalid Number")
+        question = 0
+        while not (int(question) >= 1 and int(question) <= 16):
+            question = input("""Please Select a Security question
+            1: What was your childhood nickname? 
+            2: In what city did you meet your spouse/significant other?
+            3: What is the name of your favorite childhood friend? 
+            4: What street did you live on in primary school?
+            5: What is your oldest sibling’s birthday month and year? (e.g., January 1900) 
+            6: What is the middle name of your youngest child/sibling?
+            7: What is your oldest sibling's middle name?
+            8: What was the name of your first stuffed animal?
+            9: In what city or town did your mother and father meet? 
+            10: Where were you when you had your first kiss? 
+            11: What is the first name of the boy or girl that you first kissed?
+            12: In what city does your nearest sibling live? 
+            13: What is your youngest brother’s birthday month and year? (e.g., January 1900) 
+            14: In what city or town was your first job?
+            15: What is the name of the place your wedding reception was held?
+            16: What is the name of a college you applied to but didn't attend?
+            """)
+            try:
+                if not (int(question) >= 1 and int(question) <= 16):
+                    print("Invalid number")
+            except ValueError:
+                question = 0
+                print("Invalid Number")
 
 
-    questionList = ["What was your childhood nickname?","In what city did you meet your spouse/significant other?","What is the name of your favorite childhood friend?","What street did you live on in primary school?","What is your oldest sibling’s birthday month and year? (e.g., January 1900),What is the middle name of your youngest child/sibling?","What is your oldest sibling's middle name?","What was the name of your first stuffed animal?","In what city or town did your mother and father meet?","Where were you when you had your first kiss?","11: What is the first name of the boy or girl that you first kissed?","In what city does your nearest sibling live?","13: What is your youngest brother’s birthday month and year? (e.g., January 1900),In what city or town was your first job?","What is the name of the place your wedding reception was held?","What is the name of a college you applied to but didn't attend?"]
-    print(questionList[int(question)-1])
-    answer = input("Answer: ")
-    password = encode(password,password)
-    user = open("users.txt","a")
-    string = username+"|"+password+"|"+email+"|"+questionList[int(question)-1]+"|"+answer+"\n"
-    user.write(str(string))
+        questionList = ["What was your childhood nickname?","In what city did you meet your spouse/significant other?","What is the name of your favorite childhood friend?","What street did you live on in primary school?","What is your oldest sibling’s birthday month and year? (e.g., January 1900),What is the middle name of your youngest child/sibling?","What is your oldest sibling's middle name?","What was the name of your first stuffed animal?","In what city or town did your mother and father meet?","Where were you when you had your first kiss?","11: What is the first name of the boy or girl that you first kissed?","In what city does your nearest sibling live?","13: What is your youngest brother’s birthday month and year? (e.g., January 1900),In what city or town was your first job?","What is the name of the place your wedding reception was held?","What is the name of a college you applied to but didn't attend?"]
+        print(questionList[int(question)-1])
+        answer = input("Answer: ")
+        password = encode(password,password)
+        user = open("users.txt","a")
+        string = username+"|"+password+"|"+email+"|"+questionList[int(question)-1]+"|"+answer+"\n"
+        user.write(str(string))
+        return True
+    except Exception as e:
+        return e
 
 
 def login():
@@ -232,15 +243,29 @@ def login():
                 correct = True
                 break
         if correct:
-            loggedIn = True
+            session = True
+            sessionInfo["username"] = user.username
+            return True
         else:
-            print("Error: Incorrect password or username")
+            return "incorrectinfo"
     except IndexError:
-        print("Error: No accounts exist.")
+        return "noaccount"
+
+
+def logout():
+    global session
+    print (session)
+    if session:
+        sessionInfo["username"] = ""
+        session = False
+        return True
+    else:
+        return "notloggedin"
 
 
 def checkLoggedIn():
-    if loggedIn:
+    if session:
         return True
     else:
         return False
+
