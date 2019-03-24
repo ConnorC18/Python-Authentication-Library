@@ -75,7 +75,7 @@ print(sessionInfo["username"]) # Will return the current logged in users, userna
 ```
 ###### Logout
 ```
-print(logout())  # Will return True or "notloggedin"
+logout()  # Will return True or "notloggedin"
 ```
 
 
